@@ -1,4 +1,4 @@
-# Links úteis e resumos
+# Links úteis
 
 # Sumário
 
