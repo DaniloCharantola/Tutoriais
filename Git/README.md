@@ -18,10 +18,14 @@
 - [Git revert](#revert)
 - [Git merge](#merge)
 - [Git rebase](#rebase)
-	- [squash e fixup](#squash) 
+	- [squash e fixup](#squash)
+- [Git cherry-pick](#cherryPick)
 - [Git fetch](#fetch)
 - [Git pull](#pull)
 - [Git push](#push)
+- [Git reflog](#reflog)
+- [Git diff](#diff)
+- [Git bisect](#bisect)
 - [Referências](#referencias)
 
 <a name="init"></a>
@@ -165,7 +169,7 @@ git log <branch>
 
 ```bash
 # 10 ultimos commits
-git log -10 
+git log -10
 # filtrar por data
 git log --after yyyy-mm-dd --before yyyy-mm-dd
 # por autor
@@ -201,6 +205,11 @@ git checkout <branch>
 git checkout -b <branch>
 ```
 > Cria uma nova branch com o nome informado, a partir do commit atual, e muda para ela
+
+```bash
+git checkout -- <file list>
+```
+> Descarta as alterações em um arquivo.
 
 <a name="branch"></a>
 ## Git branch
@@ -317,13 +326,17 @@ git merge <branch origem> <branch destino>
 
 <img src="merge.png" width="300"/>
 
+## --abort
+
+Aborta o merge.
+
 <a name="rebase"></a>
 ## Git rebase
 
 Git rebase move toda uma cadeia de commits para após o último commit da branch informada. Esse comando **NÃO** deve ser executado em branches públicas, pois muda o histórico de commits. E também **NÃO** deve ser executado após abrir pull request, somente após ele ser aprovado.
 
 ```bash
-# Move todas as mudanças na branch atual 
+# Move todas as mudanças na branch atual
 # para ocorrerem após o último commit na branch informada.
 git rebase <branch>
 ```
@@ -382,6 +395,17 @@ r <commit3> Mensagem do commit 3
 
 E ao salvar e fechar, ele vai pedir a nova mensagem.
 
+<a name="cherryPick"></a>
+## Git cherry-pick
+
+Este comando pega um commit específico e reproduz as mudanças dele na branch atual, criando um novo commit.
+
+Isso é útil, por exemplo, se você adicionar um commit na brach errada (digamos na master) e quiser movê-lo para outra branch (ex: feature). Então, você deve fazer um checkout na branch feature, executar um cherry-pick com aquele commit e, por fim, voltar para a branch master e fazer um git reset para descartar aquele commit.
+
+```bash
+git cherry-pick <commit>
+```
+
 <a name="fetch"></a>
 ## Git fetch
 
@@ -425,7 +449,52 @@ git push origin :branch_name
 
 Se estiver dando push de uma branch criada localmente, precisa criar uma branch correspondente no repositório remoto. Por isso, precisa da flag -u ou --set-upstream
 
+<a name="reflog"></a>
+## Git reflog
+
+Git reflog contém um log de todas as modificações que foram feitas no git. Ele pode ser útil, por exemplo, se você deu um git reset e descartou mudanças que não gostaria de descartar. Nesse caso, você pode usar git reflog para pegar o id do commit que foi descartado erroneamente, depois dar checkout nesse commit e criar uma nova branch a partir dele, recuperando as mudanças. Entretanto, é possível que o garbage collector do git já tenha descartado elas e não será possível fazer nada...
+
+(O garbage collector descarta os commits órfãos a cada 30 dias)
+
+<a name="diff"></a>
+## Git diff
+
+```bash
+# mudanças entre 2 commits
+git diff <commit1> <commit2>
+# mudanças desde o commit informado
+git diff <commit>
+# mudanças em relação a branch informada
+git diff <branch>
+# ver mudanças que podem ser adicionadas com git add
+git diff
+# ver mudanças que foram staged
+git diff --staged
+```
+<a name="bisect"></a>
+## Git bisect
+
+Pode usar para encontrar em qual commit foi adicionado um bug.
+
+```bash
+# entra no modo bisect
+git bisect start
+# informa em qual commit funcionava
+git bisect good <commit>
+# informa em qual não funciona
+git bisect bad <commit>
+# abre ide com os commits a serem analisados
+git bisect visualize
+# executa um script sobre cada um dos commits vendo se ele esta certo ou não
+# Por exemplo, se um arquivo X existe (para achar em qual commit ele foi removido)
+git bisect run ./script.sh
+# sai do modo bisect
+git bisect reset
+```
+
 <a name="referencias"></a>
 ## Referencias
 
 - [Atlassian](https://www.atlassian.com/git/tutorials)
+- [Vídeo tutorial - Corey Schafer](https://www.youtube.com/watch?v=FdZecVxzJbk)
+- [Laracon EU 2015](https://www.youtube.com/watch?v=duqBHik7nRo&frags=pl%2Cwn)
