@@ -62,38 +62,38 @@
 # IOS
 
 <a name="Facebook"></a>
-## Facebook 
+## Facebook
 
 - Enviar convite por facebook
 	- [Tutorial](http://swiftdeveloperblog.com/code-examples/invite-facebook-friends-code-example-in-swift/)
 
 <a name="Firebase"></a>
-## Firebase 
+## Firebase
 
 <a name="Adicionar"></a>
-### Adicionar firebase ao projeto 
+### Adicionar firebase ao projeto
 
 - [Documentação](https://firebase.google.com/docs/ios/setup?hl=pt-br) (Ir em "Adicionar o Firebase ao seu app" e seguir as instruções)
 
 <a name="Query"></a>
-### Estruturar e consultar - Realtime Database 
+### Estruturar e consultar - Realtime Database
 
 - [Vídeo tutoriais - Firebase for SQL developers](https://www.youtube.com/watch?v=WacqhiI-g_o&list=PLl-K7zZEsYLlP-k-RKFa7RyNPa9_wCH2s)
 
 <a name="Regras"></a>
-### Criação de regras 
+### Criação de regras
 
 - [Vídeo tutorial completo](https://www.youtube.com/watch?v=PUBnlbjZFAI&frags=pl%2Cwn)
 
 <a name="Cloud"></a>
-### Cloud functions 
+### Cloud functions
 
 - Criar e fazer deploy de cloud functions
 
 	 - [Video tutorial](https://www.youtube.com/watch?v=NIGUpxJloj8&frags=pl%2Cwn) (ver primeiros minutos principalmente)
 
 <a name="Push"></a>
-### Push Notification 
+### Push Notification
 
 - Gerar certificado e subir no firebase
 
@@ -114,7 +114,7 @@
 ```javascript
 const payload = {
     notification: { // campos padrões
-        title: `Nova notificação`, 
+        title: `Nova notificação`,
         body: `Clique para conferir`,
         badge: `1`,
         sound: `default`
@@ -131,7 +131,7 @@ const payload = {
 - [Tutorial](https://medium.com/rocket-fuel/using-multiple-firebase-environments-in-ios-12b204cfa6c0)
 
 <a name="Kingfisher"></a>
-## Kingfisher - download e cache de imagens 
+## Kingfisher - download e cache de imagens
 
 Kingfisher faz o download e cache de imagens a partir de uma URL.
 
@@ -212,7 +212,7 @@ imageView.kf.setImage(with: url)
 - [Rules](https://github.com/realm/SwiftLint/blob/master/Rules.md)
 
 <a name="Cloudkit"></a>
-## CloudKit 
+## CloudKit
 
 - Procurar vídeos WWDC
 - [Documentação](https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/DesigningforCloudKit/DesigningforCloudKit.html#//apple_ref/doc/uid/TP40012094-CH9-SW1)
@@ -228,10 +228,10 @@ imageView.kf.setImage(with: url)
 - [Criando, buscando e salvando workouts](https://www.raywenderlich.com/458-healthkit-tutorial-with-swift-workouts)
 
 <a name="In-app"></a>
-## In-app purchase 
+## In-app purchase
 
 - Tutoriais de um primeiro cara
-	- [Vídeo tutorial](https://www.youtube.com/watch?v=dwPFtwDJ7tc) 
+	- [Vídeo tutorial](https://www.youtube.com/watch?v=dwPFtwDJ7tc)
 - Tutoriais de um segundo cara
 	- [Vídeo tutorial](https://www.youtube.com/watch?v=Y6FkbZxVzNI)
 	- [Vídeo tutorial](https://www.youtube.com/watch?v=tniBAyrNI0k)
@@ -239,13 +239,13 @@ imageView.kf.setImage(with: url)
 	- [documentação](https://github.com/bizz84/SwiftyStoreKit)
 
 <a name="Codable"></a>
-## Codable e Decodable - Swift 4 
+## Codable e Decodable - Swift 4
 
 - [Explicação completa](https://hackernoon.com/everything-about-codable-in-swift-4-97d0e18a2999)
 
 
 <a name="Textfield"></a>
-## Textfield e teclado 
+## Textfield e teclado
 
 <a name="Observer"></a>
 
@@ -256,15 +256,15 @@ imageView.kf.setImage(with: url)
 - [mover para o próximo text field](https://medium.com/swift2go/swift-move-to-the-next-uitextfield-by-hitting-return-c3ce44ee9591)
 
 <a name="Publicação"></a>
-## Publicação e atualização de app 
+## Publicação e atualização de app
 
 - [Vídeo tutorial de publicação](https://www.youtube.com/watch?v=tnbOcpwJGa8)
 - [Vídeo tutorial de atualização do app](https://www.youtube.com/watch?v=kggtfVoQwIo)
 
 <a name="Realm"></a>
-## Realm 
+## Realm
 
-- [Vídeo tutorial](https://www.youtube.com/watch?v=-LwI4HMR_Eg)
+- [Vídeo tutorial](https://youtu.be/hC6dLLbfUXc)
 
 <a name="Naming"></a>
 ## Swift guidelines for naming
@@ -274,11 +274,11 @@ imageView.kf.setImage(with: url)
 # Android
 
 <a name="ConsoleAndroid"></a>
-## Console 
+## Console
 - [Console](https://play.google.com/apps/publish/?account=6586043394320681662)
 
 <a name="In-appAndroid"></a>
-## In-app purchase 
+## In-app purchase
 
 - Implementação
 	- [Vídeo tutorial](https://www.youtube.com/watch?v=KBcOjMI6WVo)
@@ -286,15 +286,15 @@ imageView.kf.setImage(with: url)
 	- [Tutorial](https://developer.android.com/google/play/billing/billing_testing.html#testing-purchases)
 
 <a name="ReleaseAndroid"></a>
-## Release / test 
+## Release / test
 
 - [Tutorial](https://support.google.com/googleplay/android-developer/answer/7159011)
 
 <a name="Spring"></a>
-# Springboot 
+# Springboot
 
 <a name="Instalação"></a>
-## PostgreSQL - Instalação 
+## PostgreSQL - Instalação
 
 - iOS: Usar brew install postgres e depois baixar o pgadmin
 - Linux:
@@ -307,6 +307,6 @@ imageView.kf.setImage(with: url)
 - [Parte 2](https://github.com/AlexandreMestre/SpringTutorial/blob/master/postgresTutorial/PostgreSQL.md)
 
 <a name="Markdown"></a>
-# Markdown 
+# Markdown
 
 - [Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
