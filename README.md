@@ -2,10 +2,10 @@
 
 # Sumário
 
-### **IOS**
+## **IOS**
 
-- [CloudKit](#Cloudkit)
-- [Codable e Decodable - Swift 4](#Codable)
+### **Pods**
+
 - [Facebook](#Facebook)
 - [Firebase](#Firebase)
 	- [Adicionar firebase ao projeto](#Adicionar)
@@ -14,47 +14,52 @@
 	- [Cloud functions](#Cloud)
 	- [Push Notification](#Push)
 	- [Development and production database](#DevAndProd)
+- [Kingfisher - download e cache de imagens](#Kingfisher)
+- [Sourcery](#Sourcery)
+- [SwiftGen](#SwiftGen)
+- [PromiseKit](#PromiseKit)
+- [OpenCV](#OpenCV)
+- [Tesseract](#Tesseract)
+- [Nimble, Quick](#Tests)
+- [Cartography](#Cartography)
+- [Swiftlint](#Swiftlint)
+
+### **Native frameworks**
+
+- [CloudKit](#Cloudkit)
 - [HealthKit](#HealthKit)
 - [In-app purchase](#In-app)
-- [Kingfisher - download e cache de imagens](#Kingfisher)
-- [Publicação e atualização de app](#Publicação)
-- [Realm](#Realm)
+
+### **Swift**
+
+- [Codable e Decodable - Swift 4](#Codable)
 - [Textfield e teclado](#Textfield)
 	- [Adicionar observer](#Observer)
 	- [mover para o próximo text field](#NextField)
 
-### **Spring boot**
+### **Outros**
 
-- [PostgreSQL - Instalação](#Instalação)
-- [Tutoriais específicos](#Tutoriais)
+- [Realm](#Realm)
+- [Publicação e atualização de app](#Publicação)
+- [Swift guidelines for naming](#Naming)
 
-### **Markdown**
-
-- [Markdown](#Markdown)
-
-### **Android**
+## **Android**
 
 - [Console](#ConsoleAndroid)
 - [In-app purchase](#In-appAndroid)
 - [Release / test](#ReleaseAndroid)
 - [Tutorial específico](Android/README.md)
 
+## **Spring boot**
+
+- [PostgreSQL - Instalação](#Instalação)
+- [Tutoriais específicos](#Tutoriais)
+
+## **Markdown**
+
+- [Markdown](#Markdown)
+
 # IOS
-
-<a name="Cloudkit"></a>
-## CloudKit 
-
-- Procurar vídeos WWDC
-- [Documentação](https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/DesigningforCloudKit/DesigningforCloudKit.html#//apple_ref/doc/uid/TP40012094-CH9-SW1)
-- Production
-	- [Mudar para o modo de produção no xcode](https://stackoverflow.com/questions/30182521/use-production-cloudkit-during-development)
-	- [Testar cloudkit](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/TestingYourApp/TestingYourApp.html#//apple_ref/doc/uid/TP40014987-CH9)
-	- [Deploy](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/DeployingYourCloudKitApp/DeployingYourCloudKitApp.html#//apple_ref/doc/uid/TP40014987-CH10)
-
-<a name="Codable"></a>
-## Codable e Decodable - Swift 4 
-
-- [Explicação completa](https://hackernoon.com/everything-about-codable-in-swift-4-97d0e18a2999)
 
 <a name="Facebook"></a>
 ## Facebook 
@@ -125,23 +130,6 @@ const payload = {
 
 - [Tutorial](https://medium.com/rocket-fuel/using-multiple-firebase-environments-in-ios-12b204cfa6c0)
 
-<a name="HealthKit"></a>
-## HealthKit
-
-- [Configurações iniciais, busca de informação e criação de dados](https://www.raywenderlich.com/459-healthkit-tutorial-with-swift-getting-started)
-- [Criando, buscando e salvando workouts](https://www.raywenderlich.com/458-healthkit-tutorial-with-swift-workouts)
-
-<a name="In-app"></a>
-## In-app purchase 
-
-- Tutoriais de um primeiro cara
-	- [Vídeo tutorial](https://www.youtube.com/watch?v=dwPFtwDJ7tc) 
-- Tutoriais de um segundo cara
-	- [Vídeo tutorial](https://www.youtube.com/watch?v=Y6FkbZxVzNI)
-	- [Vídeo tutorial](https://www.youtube.com/watch?v=tniBAyrNI0k)
-- Pod swift StoreKit
-	- [documentação](https://github.com/bizz84/SwiftyStoreKit)
-
 <a name="Kingfisher"></a>
 ## Kingfisher - download e cache de imagens 
 
@@ -172,16 +160,89 @@ imageView.kf.setImage(with: url)
 
 [Saber mais](https://github.com/onevcat/Kingfisher/wiki/Cheat-Sheet)
 
-<a name="Publicação"></a>
-## Publicação e atualização de app 
+<a name="Sourcery"></a>
+## Sourcery
 
-- [Vídeo tutorial de publicação](https://www.youtube.com/watch?v=tnbOcpwJGa8)
-- [Vídeo tutorial de atualização do app](https://www.youtube.com/watch?v=kggtfVoQwIo)
+- Muito útil para gerar todos arquivos de uma arquitetura para uma funcionalidade em seu projeto.
+- brew install sourcery
+- pod 'Sourcery'
+- [Sourcery-Github](https://github.com/krzysztofzablocki/Sourcery)
+- [Tutorial](https://www.raywenderlich.com/501-sourcery-tutorial-generating-swift-code-for-ios)
 
-<a name="Realm"></a>
-## Realm 
+<a name="SwiftGen"></a>
+## SwiftGen
 
-- [Vídeo tutorial](https://www.youtube.com/watch?v=-LwI4HMR_Eg)
+- [SwiftGen - Github](https://github.com/SwiftGen/SwiftGen)
+
+<a name="PromiseKit"></a>
+## PromiseKit
+
+- [PromiseKit - Github](https://github.com/mxcl/PromiseKit)
+- [Tutorial](https://www.raywenderlich.com/786-getting-started-with-promisekit)
+
+<a name="OpenCV"></a>
+## OpenCV
+
+- [OpenCV](https://opencv.org)
+- [Tutorial](https://medium.com/@borisohayon/ios-opencv-and-swift-1ee3e3a5735b)
+- Olhar também tutorial dentro desse mesmo repositório através do [link]()
+
+<a name="Tesseract"></a>
+## Tesseract
+
+- [Tutorial](https://www.raywenderlich.com/306-tesseract-ocr-tutorial-for-ios)
+
+<a name="Tests"></a>
+## Nimble, Quick
+
+- [Quick - Github](https://github.com/Quick)
+- Nesse link também se encontram o github do Nimble
+
+<a name="Cartography"></a>
+## Cartography
+
+- Pod que facilita a escrita de constraints por código
+- [Cartography - Github](https://github.com/robb/Cartography)
+
+<a name="Swiftlint"></a>
+## Swiftlint
+
+- Pod extremamente útil para padronização e limpeza de código
+- [Swiftlint - Github](https://github.com/realm/SwiftLint)
+- [Rules](https://github.com/realm/SwiftLint/blob/master/Rules.md)
+
+<a name="Cloudkit"></a>
+## CloudKit 
+
+- Procurar vídeos WWDC
+- [Documentação](https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/DesigningforCloudKit/DesigningforCloudKit.html#//apple_ref/doc/uid/TP40012094-CH9-SW1)
+- Production
+	- [Mudar para o modo de produção no xcode](https://stackoverflow.com/questions/30182521/use-production-cloudkit-during-development)
+	- [Testar cloudkit](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/TestingYourApp/TestingYourApp.html#//apple_ref/doc/uid/TP40014987-CH9)
+	- [Deploy](https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/CloudKitQuickStart/DeployingYourCloudKitApp/DeployingYourCloudKitApp.html#//apple_ref/doc/uid/TP40014987-CH10)
+
+<a name="HealthKit"></a>
+## HealthKit
+
+- [Configurações iniciais, busca de informação e criação de dados](https://www.raywenderlich.com/459-healthkit-tutorial-with-swift-getting-started)
+- [Criando, buscando e salvando workouts](https://www.raywenderlich.com/458-healthkit-tutorial-with-swift-workouts)
+
+<a name="In-app"></a>
+## In-app purchase 
+
+- Tutoriais de um primeiro cara
+	- [Vídeo tutorial](https://www.youtube.com/watch?v=dwPFtwDJ7tc) 
+- Tutoriais de um segundo cara
+	- [Vídeo tutorial](https://www.youtube.com/watch?v=Y6FkbZxVzNI)
+	- [Vídeo tutorial](https://www.youtube.com/watch?v=tniBAyrNI0k)
+- Pod swift StoreKit
+	- [documentação](https://github.com/bizz84/SwiftyStoreKit)
+
+<a name="Codable"></a>
+## Codable e Decodable - Swift 4 
+
+- [Explicação completa](https://hackernoon.com/everything-about-codable-in-swift-4-97d0e18a2999)
+
 
 <a name="Textfield"></a>
 ## Textfield e teclado 
@@ -193,6 +254,41 @@ imageView.kf.setImage(with: url)
 <a name="NextField"></a>
 
 - [mover para o próximo text field](https://medium.com/swift2go/swift-move-to-the-next-uitextfield-by-hitting-return-c3ce44ee9591)
+
+<a name="Publicação"></a>
+## Publicação e atualização de app 
+
+- [Vídeo tutorial de publicação](https://www.youtube.com/watch?v=tnbOcpwJGa8)
+- [Vídeo tutorial de atualização do app](https://www.youtube.com/watch?v=kggtfVoQwIo)
+
+<a name="Realm"></a>
+## Realm 
+
+- [Vídeo tutorial](https://www.youtube.com/watch?v=-LwI4HMR_Eg)
+
+<a name="Naming"></a>
+## Swift guidelines for naming
+
+- [Naming - swift](https://swift.org/documentation/api-design-guidelines/#naming)
+
+# Android
+
+<a name="ConsoleAndroid"></a>
+## Console 
+- [Console](https://play.google.com/apps/publish/?account=6586043394320681662)
+
+<a name="In-appAndroid"></a>
+## In-app purchase 
+
+- Implementação
+	- [Vídeo tutorial](https://www.youtube.com/watch?v=KBcOjMI6WVo)
+- Teste
+	- [Tutorial](https://developer.android.com/google/play/billing/billing_testing.html#testing-purchases)
+
+<a name="ReleaseAndroid"></a>
+## Release / test 
+
+- [Tutorial](https://support.google.com/googleplay/android-developer/answer/7159011)
 
 <a name="Spring"></a>
 # Springboot 
@@ -214,22 +310,3 @@ imageView.kf.setImage(with: url)
 # Markdown 
 
 - [Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
-
-# Android
-
-<a name="ConsoleAndroid"></a>
-## Console 
-- [Console](https://play.google.com/apps/publish/?account=6586043394320681662)
-
-<a name="In-appAndroid"></a>
-## In-app purchase 
-
-- Implementação
-	- [Vídeo tutorial](https://www.youtube.com/watch?v=KBcOjMI6WVo)
-- Teste
-	- [Tutorial](https://developer.android.com/google/play/billing/billing_testing.html#testing-purchases)
-
-<a name="ReleaseAndroid"></a>
-## Release / test 
-
-- [Tutorial](https://support.google.com/googleplay/android-developer/answer/7159011)
