@@ -22,6 +22,7 @@
 - [Git fetch](#fetch)
 - [Git pull](#pull)
 - [Git push](#push)
+- [Referências](#referencias)
 
 <a name="init"></a>
 ## Git init
@@ -423,3 +424,8 @@ git push origin :branch_name
 ### -u
 
 Se estiver dando push de uma branch criada localmente, precisa criar uma branch correspondente no repositório remoto. Por isso, precisa da flag -u ou --set-upstream
+
+<a name="referencias"></a>
+## Referencias
+
+- [Atlassian](https://www.atlassian.com/git/tutorials)

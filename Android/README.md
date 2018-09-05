@@ -25,6 +25,7 @@
 - [Publicar app (gerar apk)](#publicar)
 - [Assets](#assets)
 - [Atalhos](#atalhos)
+- [Referências](#referencias)
 
 <a name="activity"></a>
 ## Atividades e fragmentos (views e xibs)
@@ -682,6 +683,11 @@ Ficam na pasta src > main > res > drawable
 - Setter: atl+insert > setter
 - Girar simulador: ctrl + left
 - Identar: ctrl+alt+l
+
+<a name="referencias"></a>
+## Referências
+
+- [Tutorial do The new boston](https://www.youtube.com/watch?v=QAbQgLGKd3Y&list=PL6gx4Cwl9DGBsvRxJJOzG4r4k_zLKrnxl&index=1&frags=pl%2Cwn)
 
 
 
