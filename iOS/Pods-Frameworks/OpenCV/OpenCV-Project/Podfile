@@ -1,0 +1,9 @@
+target 'OpenCV-Project' do
+  use_frameworks!
+
+  # Pods for OpenCV-Project
+
+  # Pod for OpenCV
+  pod 'OpenCV', '3.1.0.1'
+
+end
