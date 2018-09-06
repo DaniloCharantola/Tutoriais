@@ -8,8 +8,9 @@
 - [Modo normal](#normal)
 - [Movimentação](#move)
 - [Busca](#busca)
-- [Desfazer](#undo)
+- [Desfazer e refazer](#undo)
 - [Copiar e colar](#copiar)
+- [Deletar](#delete)
 - [Observações](#obs)
 - [Referências](#ref)
 
@@ -85,6 +86,10 @@ Uma vez no modo normal, pode executar os seguintes comandos:
 - **0** - vai pro inicio da linha
 - **^** - vai para o primeiro caracter (não branco) da linha
 - **$** - vai para o ultimo caracter da linha
+- **h** - vai para esquerda
+- **j** - vai para baixo
+- **k** - vai para cima
+- **l** - vai para direita
 
 <a name="busca"></a>
 ## Busca
@@ -104,12 +109,13 @@ Após fazer a busca, pode navegar entre os resultados:
 - **N**  - Resultado anterior
 
 <a name="undo"></a>
-## Desfazer
+## Desfazer e refazer
 
 Uma vez no modo normal, pode executar os seguintes comandos:
 
 - **u** - undo
 - **ctrl+r** - redo
+- **.** - aplica a ultima operação realizada. Por exemplo, se a última operação realizada foi remover uma palavra, ao aplicar esse comando, apagará a palavra após o cursor.
 
 <a name="copiar"></a>
 ## Copiar e colar
@@ -125,6 +131,27 @@ Também é possível entrar no modo visual (apertando **v**) e selecionar (com o
 
 Para voltar ao modo normal, basta pressionar **ESC**.
 
+<a name="delete"></a>
+##Deletar
+
+- **d** - deleta (precisa de mais alguma informação, um substantivos)
+- **dd** - deleta uma linha
+
+<a name="substantivos"
+## Substantivos
+
+- **iw** - inner word - palavra na qual o cursor se encontra
+- **it** - inner tag - tag html na qual o cursor se encontra
+- **i"** - inner quotes - o que está entre aspas
+- **i)** - o que está entre parenteses
+- **ip** - inner pararaph
+- **as** - a sentence
+
+- **f<caracter>** - find - procura o caracter para frente e para exatamente nele
+- **F<caracter>** - find - procura o caracter para trás e para exatamente nele
+- **t<caracter>** - unTill - procura o caracter para frente e para logo antes dele
+- **T<caracter>** - unTill - procura o caracter para trás e para logo antes dele
+
 <a name="obs"></a>
 ## Observações
 
@@ -132,7 +159,7 @@ Para voltar ao modo normal, basta pressionar **ESC**.
 
 - Ao fazer o "yank" do texto ele só poderá ser colado dentro do vim. Para copiar ele para o clipboard e usar fora do vim, selecione o texto e aperte ctrl+c ou clique com o botão direito (se você fez as configurações)
 
-- Quase todas as operações aceitam um número antes dela. Por exemplo, 3w avança 3 palavras, 5yy copia 5 linhas...
+- As operações possuem a seguinte sintaxe: [n] verbo <substantivo>, onde n é um número opicional. Por exemplo, 3dw irá deletar 3 palavras.
 
 - Os comandos podem e devem ser combinados. Por exemplo, **ggvGy** vai para o início do arquvo, muda para o modo visual, avança até o fim do arquivo, selecionando tudo, e copia.
 
@@ -140,4 +167,5 @@ Para voltar ao modo normal, basta pressionar **ESC**.
 ## Referências
 
 - [Vim - training class 1](https://www.youtube.com/watch?v=Nim4_f5QUxA&t=1787s&frags=pl%2Cwn)
+- [Mastering the vim language](https://www.youtube.com/watch?v=wlR5gYd6um0&frags=pl%2Cwn)
 
