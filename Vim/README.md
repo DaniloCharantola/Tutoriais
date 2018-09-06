@@ -297,4 +297,4 @@ Para colocar a primeira palavra entre aspas:
 
 - [Vim - training class 1](https://www.youtube.com/watch?v=Nim4_f5QUxA&t=1787s&frags=pl%2Cwn)
 - [Mastering the vim language](https://www.youtube.com/watch?v=wlR5gYd6um0&frags=pl%2Cwn)
-
+- [Configurações do vim](https://github.com/caio96/dot-files/blob/master/.vimrc)
