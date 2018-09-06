@@ -11,6 +11,10 @@
 - [Desfazer e refazer](#undo)
 - [Copiar e colar](#copiar)
 - [Deletar](#delete)
+- [Substantivos](#substantivos)
+- [Regex](#regex)
+- [Range](#range)
+- [Substitute (replace)](#replace)
 - [Observações](#obs)
 - [Referências](#ref)
 
@@ -137,7 +141,7 @@ Para voltar ao modo normal, basta pressionar **ESC**.
 - **d** - deleta (precisa de mais alguma informação, um substantivos)
 - **dd** - deleta uma linha
 
-<a name="substantivos"
+<a name="substantivos"></a>
 ## Substantivos
 
 - **iw** - inner word - palavra na qual o cursor se encontra
@@ -151,6 +155,131 @@ Para voltar ao modo normal, basta pressionar **ESC**.
 - **F<caracter>** - find - procura o caracter para trás e para exatamente nele
 - **t<caracter>** - unTill - procura o caracter para frente e para logo antes dele
 - **T<caracter>** - unTill - procura o caracter para trás e para logo antes dele
+
+<a name="regex"></a>
+## Regex
+
+Para representar uma palavra específica, por exemplo "asa", basta digitar os caracteres asa normalmente e ele irá encontrar todas as ocorrências de "asa", inclusive dentro da palavra "casa", por exemplo. Para buscar somente ocorrências exatas, tem que fazer:
+
+**\\\<asa\\>**.
+
+**\\\<** - irá impedir de ter qualquer coisa antes de "asa".
+
+**\\>** - irá impedir de ter qualquer coisa depois de "asa".
+
+### "Escaped" characters ou metacharacters
+
+- **.** - qualquer caracter, menos nova linha
+- **\s** - espaço ou tab
+- **\_s** - espaço, tab	 ou "_"
+- **\d** - qualquer número
+- **\x** - qualquer número hexadecimal
+- **\o** - qualquer número octal
+- **\h** - head of word (a,b,c...z,A,B,C...Z and _)
+- **\w** - qualquer caracter de uma palavra
+- **\a** - qualquer letra do alfabeto
+- **\l** - qualquer caracter minúsculo
+- **\u** - qualquer caracter maiúsculo
+- **^** - início da linha
+- **$** - fim da linha
+
+Todos os comandos acima têm uma versão correspondente com letra maiúscula, que corresponde à negação da versão em letra minúscula. Por exemplo, **\D** representa qualquer caracter que não é um dígito.
+
+### Quantificadores
+
+- **\*** - indica 0 ou mais ocorrências do que o precede. Por exemplo **.\*** corresponde a qualquer sequencia de caracteres em uma linha.
+- **\\+** - indica uma ou mais ocorrência do que o precede
+- **\\=** - indica 0 ou 1 ocorrência do que o precede
+- **\\{n,m}** - entre n e m ocorrências do que o precede. Se n não for informado, irá assumir que é 0. Se m não for informado, irá supor infinito.
+- **\\{n}** - exatamente n ocorrências
+
+Os quantificadores acima são "gananciosos", então irão consumir a maior cadeia de caracteres possível. Por exemplo, no texto:
+
+*Esse "texto" será usado no "exemplo".*
+
+Ao pesquisar a regex **".\*"**, ele vai reconhecer da primeira aspas até a última: **texto" será usado no "exemplo**.
+
+Para reconhecer apenas **texto**, teria que reconhecer de forma não gananciosa:
+
+- **\{-}** - indica 0 ou mais ocorrências do que o precede (o mínimo de caracters possível).
+
+### Range de caracters
+
+- **[a-z]** - letras minúsculas
+- **[A-Z]** - letras maiúsculas
+- **[0-9]** - números
+- **[a-zA-Z0-9]** - letras ou números
+- **[^a-z]** - **^**, no início, serve como negação. Então serve para qualquer coisa que não é letra minúscula.
+
+### Grupos
+
+É possível agrupar as expressões usando parênteses: **\\(** e **\\)**
+
+### And e Or
+
+- **|** - retorna true se tiver o caracter/grupo precedente ou posterior.
+- **&** - retorna true se tiver o caracter/grupo precedente e posterior.
+
+<a name="range"></a>
+## Range
+
+Range retorna um pedaço do arquivo sobre o qual uma operação deve ser aplicada. Os principais comandos de range são:
+
+- *<number* - escrever realmente o número de uma linha
+- **.** - a linha atual
+- **$** - última linha do arquivo
+- **%** - o arquivo inteiro.
+- **/pattern** - próxima linha que bate com o pattern
+- **?pattern** - a linha anterior que bate com o pattern
+- **\/** - a próxima linha que bate com a última busca realizada
+- **\?** - a linha anterior que bate com a última busca realizada
+- **\&** - a próxima linha que bate com o último padrão usado no substitute
+
+### Vírgula
+
+Ao usar uma vírgula o range será tudo entre o que está antes da vírgula e o que está depois. Por exemplo, **1,$** pega o arquivo inteiro.
+
+### Ponto e vírgula
+
+Encontra o que está a esquerda e depois faz o que está a direita. Por exemplo:
+
+ **/Section 1/;/Subsection 1/-,/Subsection 2/+**
+
+ Vai até a seção 1 e depois pega tudo entre a sub seção 1 e subseção 2
+
+<a name="replace"></a>
+## Substitute (replace)
+
+Primeiramente, entre no modo de comando pressionando **:** a partir do modo normal. Feito isso, a sintaxe do comando substitute é dada por:
+
+**[range]s/\<regex>/\<string>/[cgiI]**
+
+Este comando irá ser aplicado no range informado (opicional) e substituirá coisas compatíveis com a regex1 pela string informada, com as opções [cgiI].
+
+Veja a seção específica de [range](#range) e [regex](#regex).
+
+### String de replace do comando substitute
+
+A string no comando substitute possui alguns caracteres especiais:
+
+- **\\1** - Dada a string que deu match com a regex no comando substitute, este caracter irá pegar a parte dessa string que deu match com o primeiro grupo da regex.
+- **\\2** - Análogo ao anterior. Pega o segundo grupo.
+- **&** - Toda a string que deu match com a regex.
+- **~** - A última string de substituição usada.
+
+Exemplo:
+
+Para colocar a primeira palavra entre aspas:
+
+:s/**\\(\\w\\+\\)\\(.\*\\)**/"**\\1**"**\\2**
+
+> **\\(\\w\\+\\)** irá identificar uma palavra.
+
+> **\\(.\*\\)** irá identificar qualquer coisa.
+
+> **\\1** vai ser substituído pelo primeiro grupo (a palavra encontrada).
+
+> **\\2** vai ser substituído pelo segundo grupo (o restante da linha).
 
 <a name="obs"></a>
 ## Observações
